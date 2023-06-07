@@ -7,7 +7,7 @@
 https://user-images.githubusercontent.com/74483690/232808895-a7956e31-ee66-4183-a4d8-fa80c79ff6e2.mp4
 
 ## Download demo
-Download the latest APK on the [release tab](https://github.com/lttthedev/Messenger-Clone/releases/tag/latest)
+Download the latest APK on the [release tab](https://github.com/lttthedev/messenger-clone/releases/tag/latest)
 
 ## Screenshots
 

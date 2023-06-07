@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String               @id @map("_id")
+  name               String
+  email              String?
+  picture            String?
+  userOnConversation UserOnConversation[]
+  messages           Message[]
+  pushTokens         PushToken[]
+}
+
+model Conversation {
+  id                 String               @id @default(uuid()) @map("_id")
+  userOnConversation UserOnConversation[]
+  messages           Message[]
+  updatedAt          DateTime             @default(now())
+}
+
+model UserOnConversation {
+  id             String       @id @default(auto()) @map("_id") @db.ObjectId
+  userId         String
+  user           User         @relation(references: [id], fields: [userId])
+  conversationId String
+  conversation   Conversation @relation(references: [id], fields: [conversationId])
+}
+
+model Message {
+  id             String       @id @map("_id")
+  type           String
+  content        String
+  createdAt      DateTime     @default(now())
+  userId         String
+  user           User         @relation(references: [id], fields: [userId])
+  conversationId String
+  conversation   Conversation @relation(references: [id], fields: [conversationId])
+}
+
+model PushToken {
+  token  String @id @map("_id")
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+}
