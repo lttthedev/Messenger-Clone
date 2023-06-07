@@ -1,4 +1,4 @@
-# Messenger-Clo<h1 align="center" style="font-size: 60px">Messenger Clone</h1>
+<h1 align="center" style="font-size: 60px">Messenger Clone</h1>
 
 <p align="center"><strong>Messenger Clone built with React Native, Nestjs, Socketio, Prisma</strong></p>
 
@@ -34,4 +34,3 @@ Download the latest APK on the [release tab](https://github.com/napthedev/messen
 
 ## Installation
 This project involves in setting up so many platform such as facebook, expo, firebase cloud messaging that I have to apologize to you for not being able to give you a detailed guide to setting up the project.
-ne
